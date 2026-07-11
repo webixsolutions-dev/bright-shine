@@ -1,4 +1,4 @@
-// File: C:\Users\Global\Downloads\bright-shine-nextjs-typescript\bright-shine-next\app\faq\page.tsx
+// File: D:\Webix\bright-shine-nextjs-typescript\bright-shine-next\app\faq\page.tsx
 import * as entry from '../../../../app/faq/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -12,9 +12,9 @@ const Footer = () => {
             <img
               src="/logo/bright-shine-logo-transparent-1000.png"
               alt="Bright Shine"
-              className="w-[46px] h-[46px]"
+              className="w-[200px] h-[200px] md:w-[150px] h-[150px] sm:w-[100] h-[100]"
             />
-            <span className="font-display font-bold text-[1.05rem]">BRIGHT SHINE</span>
+           
           </Link>
           <p className="text-[0.9rem] leading-[1.7] opacity-75 max-w-[320px]">
             Premium PPF, wrapping, and ceramic coating with studio-grade standards in Islamabad and
