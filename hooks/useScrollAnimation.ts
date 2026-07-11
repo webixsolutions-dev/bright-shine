@@ -1,0 +1,28 @@
+import type { Variants } from 'framer-motion';
+
+export const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+export const fadeIn: Variants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
+export const slideInLeft: Variants = {
+  hidden: { opacity: 0, x: -40 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.55, ease: 'easeOut' } },
+};
+
+export const slideInRight: Variants = {
+  hidden: { opacity: 0, x: 40 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.55, ease: 'easeOut' } },
+};
+
+export const staggerContainer = (stagger: number = 0.12, delay: number = 0): Variants => ({
+  hidden: {},
+  show: {
+    transition: { staggerChildren: stagger, delayChildren: delay },
+  },
+});
