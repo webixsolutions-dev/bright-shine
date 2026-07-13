@@ -8,7 +8,7 @@ import { staggerContainer, fadeUp } from '@/hooks/useScrollAnimation';
 
 const ContactLocations = () => {
   // Get embed URLs from environment variables or use default Google Maps embed
-  const getMapEmbedUrl = (city: string) => {
+  const getMapEmbedUrl = (city: string, loc: any) => {
     // You can store these in your .env file or directly here
     const mapUrls = {
       islamabad: process.env.NEXT_PUBLIC_ISLAMABAD_MAP_EMBED || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.8842664486344!2d73.0474503!3d33.6844225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd6c8e3a5e1%3A0x8b7e5b2c8e5a5b2!2sIslamabad%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s',
@@ -47,7 +47,7 @@ const ContactLocations = () => {
               <div className="w-full rounded-lg overflow-hidden shadow-lg bg-gray-100">
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                   <iframe
-                    src={loc.mapEmbedUrl || getMapEmbedUrl(loc.id)}
+                    src={getMapEmbedUrl(loc.id, loc)}
                     className="absolute top-0 left-0 w-full h-full"
                     style={{ border: 0 }}
                     loading="lazy"
