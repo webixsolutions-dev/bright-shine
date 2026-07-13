@@ -66,6 +66,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Service', path: '/service' },
+    { label: 'FAQ', path: '/faq' },
   { label: 'Contact Us', path: '/contact' },
-  { label: 'FAQ', path: '/faq' },
+
 ];

@@ -10,7 +10,7 @@ import { CONTACT } from '@/lib/constants';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen sm:min-h-[92vh] flex items-center overflow-hidden">
+    <section className="relative min-h-screen  sm:min-h-[92vh] flex items-center overflow-hidden">
       <picture className="absolute inset-0 z-0">
         <source srcSet="/images/home-hero-background-1920x1080.webp" type="image/webp" />
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -29,14 +29,14 @@ const Hero = () => {
       />
       <ShieldMotif position="right" size={680} top="-8%" opacity={0.9} />
 
-      <Container className="relative z-[2] pt-[120px]">
+      <Container className="relative z-[2]  pt-[120px]">
         <motion.div
-          className="max-w-[620px]"
+          className="max-w-[620px] mt-12 "
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <span className="eyebrow">Bright Shine · Islamabad &amp; Dubai</span>
+          <span className="eyebrow  ">Bright Shine · Islamabad &amp; Dubai</span>
           <h1 className="text-[clamp(1.6rem,6vw,4.7rem)] text-yellow-400 mt-2.5 leading-[1.05] font-display">
             Reinvent the Look.
             <br />
