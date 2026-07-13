@@ -51,7 +51,7 @@ export const CONTACT: ContactMap = {
 
 export const SOCIALS: Socials = {
   instagram: 'https://instagram.com/brightshinestudio',
-  facebook: 'https://facebook.com/',
+  facebook: 'https://facebook.com/brightshinestudio',
   tiktok: 'https://tiktok.com/@brightshinestudio',
 };
 
