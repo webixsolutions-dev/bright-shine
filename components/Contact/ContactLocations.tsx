@@ -7,20 +7,11 @@ import { LOCATIONS } from '@/data/locations';
 import { staggerContainer, fadeUp } from '@/hooks/useScrollAnimation';
 
 const ContactLocations = () => {
-  const getMapEmbedUrl = (city: string, loc: any) => {
-  if (city === 'dubai') {
-    // Bright Shine Car Care, Dubai — pinned by exact coordinates
-    return 'https://www.google.com/maps?q=25.204849,55.313851&z=16&output=embed';
-  }
-
-  if (city === 'islamabad') {
-    // Ghauri Garden, Islamabad — pinned by exact coordinates
-    return 'https://www.google.com/maps?q=33.6844225,73.0474503&z=16&output=embed';
-  }
-
-  // Fallback
-  return loc.mapEmbedUrl || loc.mapsLink;
-};
+  // Uses the mapEmbedUrl already defined per-location in @/data/locations.ts
+  // (no more hardcoded per-city URLs here — update locations.ts instead)
+  const getMapEmbedUrl = (loc: any) => {
+    return loc.mapEmbedUrl || loc.mapsLink;
+  };
 
   return (
     <section className="relative section-pad overflow-hidden bg-off-white text-navy section-light">
@@ -51,7 +42,7 @@ const ContactLocations = () => {
               <div className="w-full rounded-lg overflow-hidden shadow-lg bg-gray-100">
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                   <iframe
-                    src={getMapEmbedUrl(loc.id, loc)}
+                    src={getMapEmbedUrl(loc)}
                     className="absolute top-0 left-0 w-full h-full"
                     style={{ border: 0 }}
                     loading="lazy"
