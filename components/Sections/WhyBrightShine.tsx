@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { FaGlobe, FaClipboardCheck, FaCameraRetro, FaWhatsapp } from 'react-icons/fa';
 import type { IconType } from 'react-icons';
+import Link from 'next/link';
 import Container from '../common/Container';
 import FeatureCard from '../Cards/FeatureCard';
 import ShieldMotif from '../common/ShieldMotif';
@@ -12,6 +13,7 @@ interface WhyItem {
   icon: IconType;
   title: string;
   description: string;
+  link: string; // ✅ Added link property
 }
 
 const ITEMS: WhyItem[] = [
@@ -19,21 +21,25 @@ const ITEMS: WhyItem[] = [
     icon: FaGlobe,
     title: 'One Standard, Two Cities',
     description: 'Same premium quality, process, and materials in Islamabad and Dubai.',
+    link: '/contact', 
   },
   {
     icon: FaClipboardCheck,
     title: 'A Meticulous Multi-Step Process',
     description: 'Every detail perfected through proven steps and expert hands.',
+    link: '/service', 
   },
   {
     icon: FaCameraRetro,
     title: 'Real Transformations, Not Stock Photography',
     description: 'Authentic work, real cars, real results.',
+    link: '/service', 
   },
   {
     icon: FaWhatsapp,
     title: 'Direct WhatsApp Access to the Studio',
     description: 'Talk to the team instantly and get things moving.',
+    link: '/contact', 
   },
 ];
 
@@ -62,7 +68,9 @@ const WhyBrightShine = () => {
             viewport={{ once: true, amount: 0.15 }}
           >
             {ITEMS.map((item) => (
-              <FeatureCard key={item.title} {...item} />
+              <Link key={item.title} href={item.link} className="block cursor-pointer">
+                <FeatureCard {...item} />
+              </Link>
             ))}
           </motion.div>
         </div>

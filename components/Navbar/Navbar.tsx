@@ -6,10 +6,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa';
 import { NAV_LINKS, CONTACT } from '@/lib/constants';
 import useNavbar from '@/hooks/useNavbar';
+import { useState } from 'react';
 
 const Navbar = () => {
   const { scrolled, mobileOpen, setMobileOpen } = useNavbar();
   const pathname = usePathname();
+  const [showWhatsappOptions, setShowWhatsappOptions] = useState(false);
 
   const linkClasses = (active: boolean) =>
     `relative font-display text-[0.85rem] tracking-[0.08em] uppercase transition-all duration-200 pb-1 ${
@@ -32,7 +34,6 @@ const Navbar = () => {
             alt="Bright Shine"
             className="w-[100px] h-[100px] object-contain"
           />
-       
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 ml-auto mr-6">
@@ -51,15 +52,63 @@ const Navbar = () => {
           })}
         </nav>
 
-        <a
-          href={CONTACT.islamabad.whatsapp}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center gap-2 border-[1.5px] border-gold text-bright-gold px-[18px] py-[9px] font-display text-[0.78rem] tracking-[0.06em] uppercase rounded transition-all duration-200 hover:bg-bright-gold hover:text-navy shrink-0"
-        >
-          <FaWhatsapp size={16} />
-          WhatsApp
-        </a>
+        {/* WhatsApp Dropdown */}
+        <div className="hidden md:relative md:inline-block">
+          <button
+            onClick={() => setShowWhatsappOptions(!showWhatsappOptions)}
+            className="inline-flex items-center gap-2 border-[1.5px] border-gold text-bright-gold px-[18px] py-[9px] font-display text-[0.78rem] tracking-[0.06em] uppercase rounded transition-all duration-200 hover:bg-bright-gold hover:text-navy shrink-0"
+          >
+            <FaWhatsapp size={16} />
+            WhatsApp
+            <svg
+              className={`w-3 h-3 transition-transform duration-200 ${showWhatsappOptions ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <AnimatePresence>
+            {showWhatsappOptions && (
+              <motion.div
+                className="absolute right-0 mt-2 w-56 bg-navy border border-gold/30 rounded-lg shadow-xl overflow-hidden"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+              >
+                <a
+                  href={CONTACT.dubai.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-4 py-3 text-off-white hover:bg-bright-gold/10 hover:text-bright-gold transition-colors border-b border-gold/10"
+                  onClick={() => setShowWhatsappOptions(false)}
+                >
+                  <FaWhatsapp size={16} className="text-green-500" />
+                  <div>
+                    <div className="text-sm font-medium">Dubai</div>
+                    <div className="text-xs opacity-60">{CONTACT.dubai.phone}</div>
+                  </div>
+                </a>
+                <a
+                  href={CONTACT.islamabad.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-4 py-3 text-off-white hover:bg-bright-gold/10 hover:text-bright-gold transition-colors"
+                  onClick={() => setShowWhatsappOptions(false)}
+                >
+                  <FaWhatsapp size={16} className="text-green-500" />
+                  <div>
+                    <div className="text-sm font-medium">Islamabad</div>
+                    <div className="text-xs opacity-60">{CONTACT.islamabad.phone}</div>
+                  </div>
+                </a>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
         <button
           className="md:hidden flex text-off-white ml-auto"
@@ -92,15 +141,28 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <a
-              href={CONTACT.islamabad.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-[1.5px] border-gold text-bright-gold px-[18px] py-[9px] font-display text-[0.78rem] tracking-[0.06em] uppercase rounded mt-3"
-            >
-              <FaWhatsapp size={16} />
-              WhatsApp
-            </a>
+            
+            {/* Mobile WhatsApp Options */}
+            <div className="w-full mt-3 space-y-2">
+              <a
+                href={CONTACT.dubai.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 border-[1.5px] border-gold text-bright-gold px-[18px] py-[9px] font-display text-[0.78rem] tracking-[0.06em] uppercase rounded w-full hover:bg-bright-gold hover:text-navy transition-colors"
+              >
+                <FaWhatsapp size={16} />
+                WhatsApp (Dubai)
+              </a>
+              <a
+                href={CONTACT.islamabad.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 border-[1.5px] border-gold text-bright-gold px-[18px] py-[9px] font-display text-[0.78rem] tracking-[0.06em] uppercase rounded w-full hover:bg-bright-gold hover:text-navy transition-colors"
+              >
+                <FaWhatsapp size={16} />
+                WhatsApp (Islamabad)
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

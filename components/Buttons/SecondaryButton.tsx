@@ -6,7 +6,7 @@ import type { ReactNode, MouseEventHandler } from 'react';
 import type { IconType } from 'react-icons';
 
 const baseClasses =
-  'inline-flex items-center justify-center gap-2 px-7 py-3.5 font-display text-[0.85rem] tracking-[0.08em] uppercase font-semibold rounded whitespace-nowrap transition-all duration-200 bg-transparent text-bright-gold border-[1.5px] border-gold section-light:text-maroon';
+  'inline-flex items-center justify-center gap-2 px-4 py-2.5 font-display text-[0.75rem] tracking-[0.08em] uppercase font-semibold rounded whitespace-nowrap transition-all duration-200 bg-transparent text-bright-gold border-[1.5px] border-gold section-light:text-maroon';
 
 export interface SecondaryButtonProps {
   children: ReactNode;
@@ -21,7 +21,7 @@ const SecondaryButton = ({ children, to, href, onClick, icon: Icon, className = 
   const content = (
     <>
       <span>{children}</span>
-      {Icon && <Icon size={16} />}
+      {Icon && <Icon size={14} />}
     </>
   );
   const classes = `${baseClasses} ${className}`;
