@@ -31,9 +31,22 @@ const CTASection = ({ headline, ctaLabel = 'Book Your Slot on WhatsApp', whatsap
           <h2 className="text-[clamp(1.8rem,5vw,2.8rem)] text-off-white max-w-[760px] leading-[1.25] font-display">
             {headline}
           </h2>
-          <PrimaryButton href={whatsappNumber || CONTACT.islamabad.whatsapp} icon={FaWhatsapp}>
-            {ctaLabel}
-          </PrimaryButton>
+          <div className="whatsapp-btns flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 w-full sm:w-auto">
+            <PrimaryButton
+              href={whatsappNumber || CONTACT.dubai.whatsapp}
+              icon={FaWhatsapp}
+              className="w-full sm:w-auto justify-center text-sm sm:text-base px-4 sm:px-5 md:px-6 py-2.5 sm:py-3"
+            >
+              {ctaLabel} (Dubai)
+            </PrimaryButton>
+            <PrimaryButton
+              href={whatsappNumber || CONTACT.islamabad.whatsapp}
+              icon={FaWhatsapp}
+              className="w-full sm:w-auto justify-center text-sm sm:text-base px-4 sm:px-5 md:px-6 py-2.5 sm:py-3"
+            >
+              {ctaLabel} (Islamabad)
+            </PrimaryButton>
+          </div>
         </motion.div>
       </Container>
     </section>

@@ -7,12 +7,16 @@ import { LOCATIONS } from '@/data/locations';
 import { staggerContainer, fadeUp } from '@/hooks/useScrollAnimation';
 
 const ContactLocations = () => {
-  // Get embed URLs from environment variables or use default Google Maps embed
   const getMapEmbedUrl = (city: string, loc: any) => {
-    // You can store these in your .env file or directly here
+    // Pehle loc.mapEmbedUrl check karo, agar nahi hai toh default use karo
+    if (loc.mapEmbedUrl) {
+      return loc.mapEmbedUrl;
+    }
+
+    // Fallback URLs
     const mapUrls = {
-      islamabad: process.env.NEXT_PUBLIC_ISLAMABAD_MAP_EMBED || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.8842664486344!2d73.0474503!3d33.6844225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd6c8e3a5e1%3A0x8b7e5b2c8e5a5b2!2sIslamabad%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s',
-      dubai: process.env.NEXT_PUBLIC_DUBAI_MAP_EMBED || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.0398436979!2d54.9470006!3d25.0752425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%2C%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s'
+      islamabad: process.env.NEXT_PUBLIC_ISLAMABAD_MAP_EMBED || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.8842664486344!2d73.0474503!3d33.6844225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd6c8e3a5e1%3A0x8b7e5b2c8e5a5b2!2sBright%20Shine!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s',
+      dubai: process.env.NEXT_PUBLIC_DUBAI_MAP_EMBED || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28860.47342476885!2d55.313851!3d25.204849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6823df2c5b3d%3A0x8b7e5b2c8e5a5b2!2sBright%20Shine%20Car%20Care!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s'
     };
     return mapUrls[city as keyof typeof mapUrls] || loc.mapsLink;
   };

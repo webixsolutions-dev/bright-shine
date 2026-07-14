@@ -27,7 +27,7 @@ export const SERVICES: Service[] = [
     cardCopy: 'A full color and finish change without touching a single panel of original paint.',
     description:
       'A full vinyl wrap for a complete color or finish change — satin, gloss, matte, or color-shift — without touching the factory paint underneath.',
-    image: '/images/service-wrapping-1400x900.jpg',
+    image: '/images/wraping.jpg',
   },
   {
     id: 'ceramic-coating',
@@ -57,7 +57,7 @@ export const SERVICES: Service[] = [
     cardCopy: 'Machine paint correction that restores true gloss before protection goes on.',
     description:
       'Machine paint correction that removes swirl marks and light scratches, restoring true gloss before any protective layer goes on.',
-    image: '/images/service-polishing-1400x900.jpg',
+    image: '/images/polishing-car.jpg',
   },
 ];
 

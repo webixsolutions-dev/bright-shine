@@ -13,6 +13,7 @@ export interface ContactMap {
 }
 
 export interface Socials {
+  title:string,
   instagram: string;
   facebook: string;
   tiktok: string;
@@ -37,7 +38,7 @@ export const CONTACT: ContactMap = {
     phone: '+92 344 1863233',
     phoneHref: '+923441863233',
     whatsapp: 'https://wa.me/923441863233',
-    address: 'Street 55, F-10/4, Islamabad, Pakistan',
+    address: 'J4MP+RC5, Ghauri Garden, Islamabad, 44790, Pakistan',
   },
   dubai: {
     label: 'Bright Shine Car Care — Dubai',
@@ -45,16 +46,27 @@ export const CONTACT: ContactMap = {
     phone: '+971 58 241 4169',
     phoneHref: '+971582414169',
     whatsapp: 'https://wa.me/971582414169',
-    address: 'Dubai, United Arab Emirates',
+    address: '59C8+FGF - Ras Al Khor Ind. Second - Dubai - United Arab Emirates',
   },
 };
 
-export const SOCIALS: Socials = {
-  instagram: 'https://instagram.com/brightshinestudio',
-  facebook: 'https://facebook.com/brightshinestudio',
-  tiktok: 'https://tiktok.com/@brightshinestudio',
+export const SOCIALS: {
+  islamabad: Socials;
+  dubai: Socials;
+} = {
+  islamabad: {
+    title: "Islamabad Social Links",
+    instagram: 'https://www.instagram.com/bright_shine_studio?igsh=eG83Zmpta2lvYTg4&utm_source=qr',
+    facebook: 'https://www.facebook.com/share/1AoGQmjRfQ/?mibextid=wwXIfr',
+    tiktok: 'https://www.tiktok.com/@brightshinestudio?_r=1&_t=ZS-981R8FI916O',
+  },
+  dubai: {
+    title: "Dubai Social Links",
+    instagram: 'https://www.instagram.com/brightshinecarcare?igsh=ZTJ6a3MxcmxxaGNw&utm_source=qr',
+    facebook: 'https://www.facebook.com/share/1D3cXwoM4w/?mibextid=wwXIfr',
+    tiktok: 'https://www.tiktok.com/@brightshinecarcare?_r=1&_t=ZS-981RJ72UAcS',
+  }
 };
-
 export const SITE: SiteInfo = {
   name: 'Bright Shine',
   tagline: 'Reinvent the Look. Armor the Finish.',

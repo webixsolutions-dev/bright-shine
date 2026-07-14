@@ -39,34 +39,69 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* Follow Us - Islamabad */}
         <div>
           <h4 className="text-bright-gold text-[0.8rem] sm:text-[0.85rem] tracking-[0.1em] mb-4 font-display uppercase">
-            Follow Us
+            Follow Us - Islamabad
           </h4>
-          <div className="flex gap-3">
+          <div className="flex gap-3 mb-4">
             <a
-              href={SOCIALS.instagram}
+              href={SOCIALS.islamabad.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram"
+              aria-label="Instagram Islamabad"
               className="w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] flex items-center justify-center rounded-full border border-off-white/30 transition-all hover:bg-bright-gold hover:text-navy hover:border-bright-gold hover:-translate-y-1 text-sm sm:text-base"
             >
               <FaInstagram />
             </a>
             <a
-              href={SOCIALS.facebook}
+              href={SOCIALS.islamabad.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Facebook"
+              aria-label="Facebook Islamabad"
               className="w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] flex items-center justify-center rounded-full border border-off-white/30 transition-all hover:bg-bright-gold hover:text-navy hover:border-bright-gold hover:-translate-y-1 text-sm sm:text-base"
             >
               <FaFacebookF />
             </a>
             <a
-              href={SOCIALS.tiktok}
+              href={SOCIALS.islamabad.tiktok}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="TikTok"
+              aria-label="TikTok Islamabad"
+              className="w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] flex items-center justify-center rounded-full border border-off-white/30 transition-all hover:bg-bright-gold hover:text-navy hover:border-bright-gold hover:-translate-y-1 text-sm sm:text-base"
+            >
+              <FaTiktok />
+            </a>
+          </div>
+
+          {/* Follow Us - Dubai */}
+          <h4 className="text-bright-gold text-[0.8rem] sm:text-[0.85rem] tracking-[0.1em] mb-4 font-display uppercase">
+            Follow Us - Dubai
+          </h4>
+          <div className="flex gap-3">
+            <a
+              href={SOCIALS.dubai.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram Dubai"
+              className="w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] flex items-center justify-center rounded-full border border-off-white/30 transition-all hover:bg-bright-gold hover:text-navy hover:border-bright-gold hover:-translate-y-1 text-sm sm:text-base"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href={SOCIALS.dubai.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook Dubai"
+              className="w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] flex items-center justify-center rounded-full border border-off-white/30 transition-all hover:bg-bright-gold hover:text-navy hover:border-bright-gold hover:-translate-y-1 text-sm sm:text-base"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href={SOCIALS.dubai.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok Dubai"
               className="w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] flex items-center justify-center rounded-full border border-off-white/30 transition-all hover:bg-bright-gold hover:text-navy hover:border-bright-gold hover:-translate-y-1 text-sm sm:text-base"
             >
               <FaTiktok />
@@ -74,6 +109,7 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Contact Info */}
         <div>
           <h4 className="text-bright-gold text-[0.8rem] sm:text-[0.85rem] tracking-[0.1em] mb-4 font-display uppercase">
             {CONTACT.islamabad.label}

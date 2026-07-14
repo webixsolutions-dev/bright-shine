@@ -47,8 +47,11 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:flex-wrap">
+            <PrimaryButton href={CONTACT.dubai.whatsapp} icon={FaWhatsapp} className="sm:w-full">
+              Book on WhatsApp (Dubai)
+            </PrimaryButton>
             <PrimaryButton href={CONTACT.islamabad.whatsapp} icon={FaWhatsapp} className="sm:w-full">
-              Book on WhatsApp
+              Book on WhatsApp (Islamabad)
             </PrimaryButton>
             <SecondaryButton to="/service" className="sm:w-full">
               View Services
