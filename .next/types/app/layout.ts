@@ -1,4 +1,4 @@
-// File: D:\Webix\bright-shine-nextjs-typescript\bright-shine-next\app\layout.tsx
+// File: D:\Webix\bright-shine-next\bright-shine\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
