@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
-import WhatsAppFloat from '@/components/common/WhatsAppFloat';
 
 export const metadata: Metadata = {
   title: 'Bright Shine | Premium PPF, Wrapping & Ceramic Coating',
@@ -29,7 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <WhatsAppFloat />
+       
       </body>
     </html>
   );
