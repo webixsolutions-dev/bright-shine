@@ -14,17 +14,15 @@ const Navbar = () => {
   const [showWhatsappOptions, setShowWhatsappOptions] = useState(false);
 
   const linkClasses = (active: boolean) =>
-    `relative font-display text-[0.85rem] tracking-[0.08em] uppercase transition-all duration-200 pb-1 ${
-      active ? 'opacity-100 text-bright-gold' : 'opacity-85 text-off-white hover:opacity-100 hover:text-bright-gold'
+    `relative font-display text-[0.85rem] tracking-[0.08em] uppercase transition-all duration-200 pb-1 ${active ? 'opacity-100 text-bright-gold' : 'opacity-85 text-off-white hover:opacity-100 hover:text-bright-gold'
     }`;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${scrolled || mobileOpen
           ? 'bg-navy/95 shadow-[0_4px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm'
           : 'bg-gradient-to-b from-navy/85 to-transparent'
-      }`}
+        }`}
     >
       <div className="container-brand flex items-center justify-between gap-5 py-3.5">
         <Link href="/" className="flex items-center gap-2.5 shrink-0" onClick={() => setMobileOpen(false)}>
@@ -43,9 +41,8 @@ const Navbar = () => {
               <Link key={link.path} href={link.path} className={linkClasses(active)}>
                 {link.label}
                 <span
-                  className={`absolute left-0 -bottom-0.5 h-0.5 bg-bright-gold transition-all duration-200 ${
-                    active ? 'w-full' : 'w-0'
-                  }`}
+                  className={`absolute left-0 -bottom-0.5 h-0.5 bg-bright-gold transition-all duration-200 ${active ? 'w-full' : 'w-0'
+                    }`}
                 />
               </Link>
             );
@@ -141,7 +138,7 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            
+
             {/* Mobile WhatsApp Options */}
             <div className="w-full mt-3 space-y-2">
               <a

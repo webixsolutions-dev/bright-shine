@@ -46,22 +46,23 @@ const Footer = () => {
           </h4>
           <div className="flex gap-3 mb-4">
             <a
-              href={SOCIALS.islamabad.instagram}
+              href={SOCIALS.islamabad.facebook}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram Islamabad"
               className="w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] flex items-center justify-center rounded-full border border-off-white/30 transition-all hover:bg-bright-gold hover:text-navy hover:border-bright-gold hover:-translate-y-1 text-sm sm:text-base"
             >
-              <FaInstagram />
+              
+                <FaFacebookF />
             </a>
             <a
-              href={SOCIALS.islamabad.facebook}
+              href={SOCIALS.islamabad.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook Islamabad"
               className="w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] flex items-center justify-center rounded-full border border-off-white/30 transition-all hover:bg-bright-gold hover:text-navy hover:border-bright-gold hover:-translate-y-1 text-sm sm:text-base"
             >
-              <FaFacebookF />
+            <FaInstagram />
             </a>
             <a
               href={SOCIALS.islamabad.tiktok}
@@ -80,22 +81,23 @@ const Footer = () => {
           </h4>
           <div className="flex gap-3">
             <a
-              href={SOCIALS.dubai.instagram}
+              href={SOCIALS.dubai.facebook}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram Dubai"
               className="w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] flex items-center justify-center rounded-full border border-off-white/30 transition-all hover:bg-bright-gold hover:text-navy hover:border-bright-gold hover:-translate-y-1 text-sm sm:text-base"
             >
-              <FaInstagram />
+         
+                <FaFacebookF />
             </a>
             <a
-              href={SOCIALS.dubai.facebook}
+              href={SOCIALS.dubai.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook Dubai"
               className="w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] flex items-center justify-center rounded-full border border-off-white/30 transition-all hover:bg-bright-gold hover:text-navy hover:border-bright-gold hover:-translate-y-1 text-sm sm:text-base"
             >
-              <FaFacebookF />
+                 <FaInstagram />
             </a>
             <a
               href={SOCIALS.dubai.tiktok}
@@ -157,7 +159,7 @@ const Footer = () => {
 
       <div className="container-brand flex flex-col sm:flex-row items-center justify-between gap-2.5 py-5 text-[0.7rem] sm:text-[0.8rem] opacity-65">
         <p>© {SITE.year} Bright Shine. All rights reserved.</p>
-        <div className="flex flex-wrap items-center justify-center gap-2.5">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 py-3">
           <Link href="/privacy-policy" className="hover:text-bright-gold">Privacy Policy</Link>
           <span>|</span>
           <Link href="/terms" className="hover:text-bright-gold">Terms &amp; Conditions</Link>
