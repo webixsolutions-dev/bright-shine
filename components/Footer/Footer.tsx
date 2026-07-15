@@ -112,7 +112,7 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div>
+        <div className='py-3'>
           <h4 className="text-bright-gold text-[0.8rem] sm:text-[0.85rem] tracking-[0.1em] mb-4 font-display uppercase">
             {CONTACT.islamabad.label}
           </h4>

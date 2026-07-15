@@ -68,7 +68,7 @@ const Hero = () => {
         size={680}
         top="-8%"
         opacity={0.9}
-        className="hidden lg:block"
+        
       />
 
       <Container className="relative z-[2] pt-[88px] sm:pt-[120px] md:pt-[140px] lg:pt-[160px] pb-10 sm:pb-16 md:pb-20">
