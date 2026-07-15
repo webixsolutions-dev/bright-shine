@@ -160,9 +160,9 @@ const Footer = () => {
       <div className="container-brand flex flex-col sm:flex-row items-center justify-between gap-2.5 py-5 text-[0.7rem] sm:text-[0.8rem] opacity-65">
         <p>© {SITE.year} Bright Shine. All rights reserved.</p>
         <div className="flex flex-wrap items-center justify-center gap-2.5 py-3">
-          <Link href="/privacy-policy" className="hover:text-bright-gold">Privacy Policy</Link>
+          <Link href="/privacy-policy" className="hover:text-bright-gold py-2">Privacy Policy</Link>
           <span>|</span>
-          <Link href="/terms" className="hover:text-bright-gold">Terms &amp; Conditions</Link>
+          <Link href="/terms" className="hover:text-bright-gold py-2">Terms &amp; Conditions</Link>
         </div>
       </div>
     </footer>
